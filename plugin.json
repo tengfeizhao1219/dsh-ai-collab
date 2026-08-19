@@ -2,7 +2,7 @@
   "name": "ai-collab",
   "displayName": "AI 协作开发框架（ai-collab）",
   "description": "AI 多角色协作开发框架 v2：文件即通信 + 教训库（LEARNINGS）+ 决策日志（ADR）+ 一致性审计（check.py）+ 质量门禁。一键初始化协作约定文件，任何 DSH 会话通过 ai_collab_init 驱动多角色 AI 协作完成软件项目。",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "mechanism": {
     "origin": "改编自真实项目实践「AI 情报官」多角色协作机制 v1.0（源自 One News 多会话协作框架）",
