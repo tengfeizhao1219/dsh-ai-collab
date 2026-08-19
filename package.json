@@ -1,7 +1,7 @@
 {
   "name": "dsh-ai-collab",
-  "version": "0.2.1",
-  "description": "AI 多角色协作开发框架：文件即通信 + 教训库 + 决策日志 + 一致性审计。注册 ai_collab_init 工具，驱动多角色 AI 协作完成软件项目。",
+  "version": "0.3.0",
+  "description": "AI 多角色协作开发框架：文件即通信 + 教训库 + 决策日志 + 一致性审计 + 复盘持续优化（REVIEW）。注册 ai_collab_init 工具。",
   "type": "module",
   "main": "./lib/index.js",
   "files": [

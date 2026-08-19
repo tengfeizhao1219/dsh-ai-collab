@@ -25,7 +25,7 @@ import sys
 REQUIRED_FILES = [
     "CONTEXT.md", "ROLE_CARDS.md", "TASK_BOARD.md", "RELAY.md",
     "COMMLOG.md", "COLLABORATION.md", "NAVIGATION.md",
-    "SESSION_BOOT.md", "LEARNINGS.md", "ADR.md",
+    "SESSION_BOOT.md", "LEARNINGS.md", "ADR.md", "REVIEW.md",
 ]
 DOC_DIRS = ["01-需求规划", "02-产品设计", "03-技术方案",
             "04-开发实现", "05-测试验收", "06-上线复盘"]
@@ -126,6 +126,12 @@ def main(root):
     missing_docs = [d for d in check_dirs if not os.path.isdir(p(d))]
     if missing_docs:
         problems.append(f"[6] 缺少文档目录: {missing_docs}")
+
+    # [7.5] 复盘优化行动追踪（REVIEW 中未打勾的行动）
+    review = read("REVIEW.md")
+    open_actions = re.findall(r"^\s*-\s*\[ \]\s+(.*)$", review, re.M)
+    if len(open_actions) >= 5:
+        warnings.append(f"[7] REVIEW 未完成优化行动已达 {len(open_actions)} 条，建议尽快复盘消化（复盘不落地 = 没复盘）")
 
     # [7] 关口检查记录
     if "关口检查记录" in tb:

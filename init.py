@@ -51,7 +51,7 @@ TPL_FILES = [
     "CONTEXT.md.tpl", "ROLE_CARDS.md.tpl", "TASK_BOARD.md.tpl",
     "RELAY.md.tpl", "COMMLOG.md.tpl", "COLLABORATION.md.tpl",
     "NAVIGATION.md.tpl", "SESSION_BOOT.md.tpl",
-    "LEARNINGS.md.tpl", "ADR.md.tpl",
+    "LEARNINGS.md.tpl", "ADR.md.tpl", "REVIEW.md.tpl",
 ]
 
 TPL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")

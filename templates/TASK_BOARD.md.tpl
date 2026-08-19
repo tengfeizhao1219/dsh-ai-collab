@@ -46,6 +46,8 @@
 
 ## 关口检查记录（Gate Check）
 
+> 关口流程（v3）：① 跑 `python3 scripts/check.py`（一致性）→ ② 跑 `python3 scripts/review.py`（复盘输入）→ ③ 写 REVIEW.md 阶段复盘 → ④ 过关口。
+
 | 关口 | 结果 | 检查人 | 日期 | 说明 |
 | Phase 0 → Phase 1 | ⏳ | O | — | 待 Phase 0 全 ✅ |
 | Phase 1 → Phase 2 | ⏳ | O | — | — |
