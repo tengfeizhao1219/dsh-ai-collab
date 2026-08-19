@@ -29,6 +29,19 @@ REQUIRED_FILES = [
 ]
 DOC_DIRS = ["01-需求规划", "02-产品设计", "03-技术方案",
             "04-开发实现", "05-测试验收", "06-上线复盘"]
+# 可选配置（项目根或目标目录的 .ai-collab.json）：
+#   {"required_files": {"COLLABORATION.md": "AI情报官_协作机制.md", ...},  # 标准名 → 项目实际文件名
+#    "docs_dirs": ["intel-docs"]}                                           # 自定义 docs 目录（替代标准六目录检查）
+def load_config(target):
+    for base in (os.getcwd(), target):
+        fp = os.path.join(base, ".ai-collab.json")
+        if os.path.exists(fp):
+            try:
+                import json
+                return json.load(open(fp, encoding="utf-8"))
+            except Exception:
+                return {}
+    return {}
 ALLOWED_STATUSES = {"📋", "🔄", "✅", "🚫", "🔁", "⛔", "⏳"}
 PHASE_RE = re.compile(r"Phase\s*(\d+)")
 TASK_STATUS_RE = re.compile(r"\|\s*(T\d+\.\d+)\s*\|.*?\|\s*(📋|🔄|✅|🚫|🔁|⛔)\s*\|")
@@ -52,11 +65,17 @@ def read(name):
 
 def main(root):
     print(f"== ai-collab check: {os.path.abspath(root)}\n")
+    cfg = load_config(root)
+    aliases = cfg.get("required_files", {}) or {}
+    docs_dirs = cfg.get("docs_dirs") or []
+
+    def resolve(name):
+        return aliases.get(name, name)
 
     # [1] 文件完整性
     present = []
     for name in REQUIRED_FILES:
-        if os.path.exists(p(name)):
+        if os.path.exists(p(resolve(name))):
             present.append(name)
     if len(present) < len(REQUIRED_FILES):
         print(f"[1] 缺失 {len(REQUIRED_FILES) - len(present)} 个约定文件: "
@@ -64,7 +83,7 @@ def main(root):
 
     # [2] 占位符残留
     for name in REQUIRED_FILES + ["README.md"]:
-        fp = p(name)
+        fp = p(resolve(name))
         if not os.path.exists(fp):
             continue
         text = open(fp, encoding="utf-8").read()
@@ -102,10 +121,11 @@ def main(root):
     if comm_count > 30:
         warnings.append(f"[5] COMMLOG 已有 {comm_count} 条日期条目，建议归档（>30 条按 COLLABORATION §十二 归档到 docs/06-上线复盘/）")
 
-    # [6] docs 目录骨架
-    missing_docs = [d for d in DOC_DIRS if not os.path.isdir(p(os.path.join("docs", d)))]
+    # [6] docs 目录骨架（支持自定义 docs_dirs 配置）
+    check_dirs = docs_dirs or [os.path.join("docs", d) for d in DOC_DIRS]
+    missing_docs = [d for d in check_dirs if not os.path.isdir(p(d))]
     if missing_docs:
-        problems.append(f"[6] 缺少 docs 目录: {missing_docs}")
+        problems.append(f"[6] 缺少文档目录: {missing_docs}")
 
     # [7] 关口检查记录
     if "关口检查记录" in tb:
