@@ -23,9 +23,6 @@
   "peerDependencies": {
     "@deepseek-ai/dsh-tools": "^0.1.0"
   },
-  "devDependencies": {
-    "@deepseek-ai/dsh-tools": "workspace:^"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/tengfeizhao1219/dsh-ai-collab.git"
@@ -39,5 +36,8 @@
     "multi-agent",
     "collaboration"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
 }
