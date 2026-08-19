@@ -1,0 +1,22 @@
+# COMMLOG · {{PROJECT_NAME}} 沟通交接记录
+
+> **倒序（最新在上）**。每条：日期 | 角色 | 事项 | 状态/去向。子 Agent 交付后必须在此留痕。
+> 详细过程留痕于各交付文档；这里只记「交接点」。
+> 由 ai-collab 插件生成，{{START_DATE}}。
+
+---
+
+| 日期 | 角色 | 事项 | 状态 |
+| {{START_DATE}} | O | 项目初始化：ai-collab 五件套落盘（CONTEXT/ROLE_CARDS/TASK_BOARD/RELAY/COMMLOG/COLLABORATION/NAVIGATION） | ✅ |
+| {{START_DATE}} | O | 需求收集启动：与 owner 逐块讨论，形成需求文档 v1 | 🔄 |
+
+---
+
+## 交接记录格式（模板）
+
+### YYYY-MM-DD · 一句话标题
+
+- **背景**：为什么做这件事。
+- **交接**：做了什么（关键决策/改动点，带引用）。
+- **产物**：代码提交 / 文档 / 部署记录。
+- **下游**：影响哪些角色/环节，未来注意什么。

@@ -1,0 +1,43 @@
+{
+  "name": "dsh-ai-collab",
+  "version": "0.1.0",
+  "description": "AI 多角色协作开发框架：一键初始化「文件即通信」协作机制（CONTEXT/ROLE_CARDS/TASK_BOARD/RELAY/COMMLOG/COLLABORATION/NAVIGATION/SESSION_BOOT），任何 DSH 会话都能通过 ai_collab_init 工具或 SESSION_BOOT 提示词驱动多角色 AI 协作完成软件项目。",
+  "type": "module",
+  "main": "./lib/index.js",
+  "files": [
+    "lib",
+    "templates",
+    "docs",
+    "scripts",
+    "SKILL.md",
+    "init.py",
+    "cordis.patch.yml",
+    "README.md",
+    "plugin.json"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "^0.1.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-tools": "workspace:^"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tengfeizhao1219/dsh-ai-collab.git"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "ai-collab",
+    "multi-agent",
+    "collaboration"
+  ],
+  "license": "MIT"
+}

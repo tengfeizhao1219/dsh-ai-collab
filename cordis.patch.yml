@@ -1,0 +1,5 @@
+# dsh-ai-collab bundle patch：安装到 profile 时插入本插件行
+# 用户可在此处覆盖配置（见官方文档 publish.zh.md「加载顺序」）
+- insert:
+    - id: ai-collab
+      name: dsh-ai-collab
