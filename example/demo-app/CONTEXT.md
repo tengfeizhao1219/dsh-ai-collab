@@ -11,16 +11,16 @@
 ## 基本信息
 
 - **项目名**：demo-app
-- **定位**：示例：团队任务管理小程序（用 ai-collab 机制驱动 AI 协作开发）
-- **技术栈**（待定/已定）：微信小程序 + 云开发
+- **定位**：示例项目
+- **技术栈**（待定/已定）：微信小程序
 - **仓库**：待定
 - **协作机制版本**：1.0.0
 
 ## 硬前提（不可违背）
 
-1. UI 复用现有设计令牌，禁止新增 hex 色值
-2. —
-3. —
+1. 待 owner 拍板（项目启动时确认，写入本文件后生效）
+2. 所有产物以「AI 实现/输出」为前提生产，且必须是 AI 可直接消费的形态
+3. 增量改动必须显式标记且可整体摘除（如需在既有代码库上叠加）
 
 > 硬前提由 owner 在项目启动时拍板，Q 角色负责红线审计。新增硬前提须经 owner 确认并写入本文件。
 
@@ -37,7 +37,7 @@
 
 ## 协作框架（必读文件）
 
-本文件（CONTEXT.md）· ROLE_CARDS.md · TASK_BOARD.md · RELAY.md · COMMLOG.md · COLLABORATION.md · NAVIGATION.md
+本文件（CONTEXT.md）· ROLE_CARDS.md · TASK_BOARD.md · RELAY.md · COMMLOG.md · COLLABORATION.md · NAVIGATION.md · LEARNINGS.md · ADR.md
 
 ## 🔑 常用速查
 

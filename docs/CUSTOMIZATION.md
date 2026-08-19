@@ -94,7 +94,26 @@ nohup python3 scripts/notion_sync.py --dir . >/dev/null 2>&1 &
 
 ---
 
-## 6. 机制自身的迭代（吃自己的狗粮）
+## 6. CI 级门禁（进阶，按项目工具链启用）
+
+关口检查的 check.py 是机制层门禁；项目层门禁按需接入（参考业界实证：AI 生成的 PR 常因破坏既有测试/缺上下文/未更新文档被拒）：
+
+```yaml
+# 示例：GitHub Actions 门禁（check.py + lint + test 三关，产出证据）
+# .github/workflows/gate.yml
+on: [push, pull_request]
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/check.py          # 机制一致性（退出码 0 才过）
+      - run: npm ci && npm run lint && npm test # 项目门禁（按实际工具链改）
+```
+
+> 原则：门禁必须**产出证据**（日志/覆盖率/lint 报告）随工件归档；证据缺失 = 未过门禁。
+
+## 7. 机制自身的迭代（吃自己的狗粮）
 
 项目复盘（Phase 4.3）时，把「这套机制哪里卡住了」回写：
 - 卡在角色权限不清 → 回改 ROLE_CARDS

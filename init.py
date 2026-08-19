@@ -51,6 +51,7 @@ TPL_FILES = [
     "CONTEXT.md.tpl", "ROLE_CARDS.md.tpl", "TASK_BOARD.md.tpl",
     "RELAY.md.tpl", "COMMLOG.md.tpl", "COLLABORATION.md.tpl",
     "NAVIGATION.md.tpl", "SESSION_BOOT.md.tpl",
+    "LEARNINGS.md.tpl", "ADR.md.tpl",
 ]
 
 TPL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
@@ -187,7 +188,7 @@ AI 会按序读取约定文件完成上下文继承，然后即可派发任务�
     print("下一步：")
     print("  1. 编辑 CONTEXT.md 补充定位/硬前提（或直接让 O 主控按模板推进）")
     print("  2. 新会话粘贴 SESSION_BOOT.md 接棒提示词，开始派发任务")
-    print("  3. 可选：git init + scripts/git_sync.sh 启动同步守护")
+    print("  3. 跑 scripts/check.py 验证机制文件一致性；可选：git init + scripts/git_sync.sh 启动同步守护")
 
 
 if __name__ == "__main__":

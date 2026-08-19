@@ -1,13 +1,21 @@
 {
   "name": "ai-collab",
   "displayName": "AI 协作开发框架（ai-collab）",
-  "description": "把「文件即通信」的多角色 AI 协作机制做成通用插件：一键初始化项目的约定文件五件套（CONTEXT/ROLE_CARDS/TASK_BOARD/RELAY/COMMLOG/COLLABORATION/NAVIGATION/SESSION_BOOT），任何 AI 客户端（WorkBuddy/CodeBuddy/DeepSeek Harness/Claude 等）都能通过文件机制驱动 AI 多角色协作完成软件项目。",
-  "version": "1.0.0",
+  "description": "AI 多角色协作开发框架 v2：文件即通信 + 教训库（LEARNINGS）+ 决策日志（ADR）+ 一致性审计（check.py）+ 质量门禁。一键初始化协作约定文件，任何 DSH 会话通过 ai_collab_init 驱动多角色 AI 协作完成软件项目。",
+  "version": "0.2.0",
   "license": "MIT",
   "mechanism": {
     "origin": "改编自真实项目实践「AI 情报官」多角色协作机制 v1.0（源自 One News 多会话协作框架）",
     "core": "文件即通信：所有角色通过 git 仓库 + 约定文件交换信息，不靠会议、不靠 IM、不催进度；文件是唯一事实来源，新会话读文件即可 100% 继承。",
-    "roles": ["O 主控", "I 基础设施", "A 适配/接入", "P 处理/核心", "D 交付/前端", "Q 校验", "K 文档"]
+    "roles": [
+      "O 主控",
+      "I 基础设施",
+      "A 适配/接入",
+      "P 处理/核心",
+      "D 交付/前端",
+      "Q 校验",
+      "K 文档"
+    ]
   },
   "entrypoints": {
     "init": "python3 ai-collab/init.py <项目名> [--desc ...] [--constraint ...]",
@@ -15,5 +23,11 @@
     "git_sync": "scripts/git_sync.sh",
     "notion_sync": "scripts/notion_sync.py"
   },
-  "compatible_clients": ["WorkBuddy", "CodeBuddy", "DeepSeek Harness (DSH)", "Claude Desktop", "任何支持自定义提示词的 AI 工具"]
+  "compatible_clients": [
+    "WorkBuddy",
+    "CodeBuddy",
+    "DeepSeek Harness (DSH)",
+    "Claude Desktop",
+    "任何支持自定义提示词的 AI 工具"
+  ]
 }

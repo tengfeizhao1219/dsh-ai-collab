@@ -1,7 +1,7 @@
 {
   "name": "dsh-ai-collab",
-  "version": "0.1.0",
-  "description": "AI 多角色协作开发框架：一键初始化「文件即通信」协作机制（CONTEXT/ROLE_CARDS/TASK_BOARD/RELAY/COMMLOG/COLLABORATION/NAVIGATION/SESSION_BOOT），任何 DSH 会话都能通过 ai_collab_init 工具或 SESSION_BOOT 提示词驱动多角色 AI 协作完成软件项目。",
+  "version": "0.2.0",
+  "description": "AI 多角色协作开发框架：文件即通信 + 教训库 + 决策日志 + 一致性审计。注册 ai_collab_init 工具，驱动多角色 AI 协作完成软件项目。",
   "type": "module",
   "main": "./lib/index.js",
   "files": [

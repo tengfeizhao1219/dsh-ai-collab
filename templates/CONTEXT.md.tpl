@@ -37,7 +37,7 @@
 
 ## 协作框架（必读文件）
 
-本文件（CONTEXT.md）· ROLE_CARDS.md · TASK_BOARD.md · RELAY.md · COMMLOG.md · COLLABORATION.md · NAVIGATION.md
+本文件（CONTEXT.md）· ROLE_CARDS.md · TASK_BOARD.md · RELAY.md · COMMLOG.md · COLLABORATION.md · NAVIGATION.md · LEARNINGS.md · ADR.md
 
 ## 🔑 常用速查
 
